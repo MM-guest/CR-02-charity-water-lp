@@ -1,0 +1,234 @@
+:root {
+  --yellow: #FFC907;
+  --navy: #003366;
+  --cream: #FFF7E1;
+  --black: #1A1A1A;
+  --light-blue: #77A8BB;
+}
+
+/* Make the box model simple and consistent for beginners */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic page setup */
+body {
+  margin: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  background-color: var(--cream);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* Use Proxima Nova for all text in the page */
+h1, h2, h3, p, a, button, .button {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+/* Keep links simple and easy to read */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header: cream background with a thin line under it */
+.site-header {
+  background-color: var(--cream);
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo on the left side of the header */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Make the uploaded logo image fit nicely in the header */
+.logo-image {
+  height: 35px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation links on the right side */
+.main-nav a {
+  margin-left: 20px;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+/* Hero section: split into two columns on large screens */
+.hero {
+  display: flex;
+  min-height: 540px;
+  background-color: var(--cream);
+}
+
+/* Left side of the hero with headline and text */
+.hero-text {
+  flex: 1;
+  padding: 60px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-size: 2.3rem;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  margin-bottom: 60px;
+  max-width: 520px;
+  margin-top: 0;
+}
+
+/* Yellow button used in the hero and call to action */
+.button {
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Slight hover effect for the button */
+.button:hover {
+  background-color: #e0ac00;
+  transform: scale(1.05);
+}
+
+/* Right side of the hero with the image */
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Story section with centered content and simple fact cards */
+.story {
+  background-color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.story h2 {
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.story > p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.fact-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fact-card {
+  background-color: var(--cream);
+  padding: 20px;
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+}
+
+.fact-card h3 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+/* Call to action section with light blue background */
+.cta {
+  background-color: var(--light-blue);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+/* Footer with dark background and a yellow link */
+.site-footer {
+  background-color: var(--black);
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--yellow);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-nav a {
+    margin-left: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    padding: 40px 20px 20px;
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .fact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fact-card {
+    max-width: 100%;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
